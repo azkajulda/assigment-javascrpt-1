@@ -31,7 +31,7 @@
           </div>
           <div class="mb-3">
             <label for="vacancy" class="form-label">Vacancy*</label>
-            <select class="form-select" id="vacancy" required>
+            <select class="form-select" id="vacancy" required onchange="checkKuota(this.value)">
               <option value="" selected>&mdash;Choose your vacancy&mdash;</option>
             </select>
             <div id="errorVacancy" class="text-danger d-none">Field ini harus di isi!</div>
@@ -43,14 +43,14 @@
             </select>
             <div id="errorPosition" class="text-danger d-none">Field ini harus di isi!</div>
           </div>  
-          <button type="submit" class="btn btn-success" onclick="submitResult()">Kirim</button>
+          <button type="submit" class="btn btn-success" onclick="submitResult()" id="btnSubmit">Kirim</button>
           
         </div>
 
         <div id="result" class="col-md-6 hr-horizontal d-none">          
           <h2 class="mt-3">Result</h2>
           <hr class="my-3">
-          <p class="text-success">Terima kasih atas melakukan pengisian, permintaan ada akan segera kami proses</p>
+          <p class="text-success" id="result-description"></p>
 
           <div class="mb-3">
             <p class="m-0 fw-bold">Fullname</p>
